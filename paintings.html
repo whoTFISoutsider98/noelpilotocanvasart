@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paintings - Canvas Art by Noel Piloto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background: url('51064ECA-BB08-433E-B073-5420AFEAC209.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(68, 68, 68, 0.8);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        nav {
+            background-color: rgba(51, 51, 51, 0.9);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+        section {
+            padding: 40px 20px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0); /* Eliminado el fondo blanco */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Eliminado la sombra */
+            border-radius: 8px;
+        }
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #fff;
+        }
+        p, blockquote {
+            font-size: 1.2em;
+            color: #fff;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .painting {
+            margin-bottom: 40px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.9);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Canvas Art by Noel Piloto</h1>
+        <p>A journey through the passion for painting</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="bio.html">Biography</a>
+        <a href="contact.html">Contact</a>
+        <a href="summary.html">Summary</a>
+    </nav>
+    <section id="paintings">
+        <h2>Paintings</h2>
+        <div class="painting">
+            <h3>Abstract Harmony</h3>
+            <img src="95B8701A-1A09-4701-9159-BCD129B97AA7.jpeg" alt="Abstract Harmony" onclick="openPhotoSwipe(0)">
+            <p>This painting represents the balance between chaos and serenity, using a blend of vibrant colors and textured elements to create a harmonious composition. The interplay of the various hues and textures creates a dynamic visual experience. Inspired by the fluidity of nature and the complexity of human emotions.</p>
+        </div>
+        <div class="painting">
+            <h3>Urban Echoes</h3>
+            <img src="3D681D88-D014-4E29-A786-6723989548E5.jpeg" alt="Urban Echoes" onclick="openPhotoSwipe(1)">
+            <p>This piece captures the essence of urban life, depicting the interplay of light and shadow in a cityscape through abstract forms and muted tones. It reflects the complexity and vibrancy of modern cities, exploring themes of growth, decay, and renewal.</p>
+        </div>
+        <div class="painting">
+            <h3>Silent Reflection</h3>
+            <img src="279C9FFB-04C4-43C2-966C-4694E135C27E.jpeg" alt="Silent Reflection" onclick="openPhotoSwipe(2)">
+            <p>In this work, Noel Piloto explores themes of solitude and introspection, using soft hues and subtle contrasts to evoke a sense of calm and contemplation. It invites viewers to take a moment for themselves, reflecting on their inner thoughts and emotions.</p>
+        </div>
+        <div class="painting">
+            <h3>Color Symphony</h3>
+            <img src="F9959D59-AA9E-4444-AFB6-0747EBE62D3A.jpeg" alt="Color Symphony" onclick="openPhotoSwipe(3)">
+            <p>A vibrant explosion of colors, this painting is a celebration of life and energy, capturing the dynamic and expressive nature of abstract art. It showcases Noel Piloto's mastery of color and movement, inviting viewers to experience the joy and exuberance of his artistic vision.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Canvas Art by Noel Piloto. All rights reserved.</p>
+    </footer>
+
+    <!-- PhotoSwipe -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+    <script>
+        var openPhotoSwipe = function(index) {
+            var pswpElement = document.querySelectorAll('.pswp')[0];
+
+            // build items array
+            var items = [
+                {
+                    src: '95B8701A-1A09-4701-9159-BCD129B97AA7.jpeg',
+                    w: 1200,
+                    h: 800,
+                    title: 'This painting represents the balance between chaos and serenity, using a blend of vibrant colors and textured elements to create a harmonious composition. The interplay of the various hues and textures creates a dynamic visual experience. Inspired by the fluidity of nature and the complexity of human emotions.'
+                },
+                {
+                    src: '3D681D88-D014-4E29-A786-6723989548E5.jpeg',
+                    w: 1200,
+                    h: 800,
+                    title: 'This piece captures the essence of urban life, depicting the interplay of light and shadow in a cityscape through abstract forms and muted tones. It reflects the complexity and vibrancy of modern cities, exploring themes of growth, decay, and renewal.'
+                },
+                {
+                    src: '279C9FFB-04C4-43C2-966C-4694E135C27E.jpeg',
+                    w: 1200,
+                    h: 800,
+                    title: 'In this work, Noel Piloto explores themes of solitude and introspection, using soft hues and subtle contrasts to evoke a sense of calm and contemplation. It invites viewers to take a moment for themselves, reflecting on their inner thoughts and emotions.'
+                },
+                {
+                    src: 'F9959D59-AA9E-4444-AFB6-0747EBE62D3A.jpeg',
+                    w: 1200,
+                    h: 800,
+                    title: 'A vibrant explosion of colors, this painting is a celebration of life and energy, capturing the dynamic and expressive nature of abstract art. It showcases Noel Piloto\'s mastery of color and movement, inviting viewers to experience the joy and exuberance of his artistic vision.'
+                }
+            ];
+
+            var options = {
+                index: index // start at selected slide
+            };
+
+            // Initializes and opens PhotoSwipe
+            var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+            gallery.init();
+        };
+    </script>
+</body>
+</html>
